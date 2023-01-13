@@ -31,13 +31,13 @@ class Sock_settings:
             bytes
             ):
         self.response = b""
-
-        while True:
-            chunk = self.sock.recv(bytes)
-  
-            if len(chunk) == 0:
-                break
-            self.response = self.response + chunk
+        self.response = self.sock.recv(bytes)
+        #while True:
+        #    chunk = self.sock.recv(bytes)
+  #
+        #    if len(chunk) == 0:
+        #        break
+        #    self.response = self.response + chunk
 
         return self.response.decode()
     

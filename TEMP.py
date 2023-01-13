@@ -1,10 +1,13 @@
-from methods import head
+from methods import post
 
 if __name__ == '__main__':
-    url="http://data.pr4e.org/romeo.txt"
-    response = head.Head(
+    url=""
+    response = post.Post(
         url=url,
-        headers={}
+        headers={
+        },
+        payload = {
+        }
     ).return_all()
-    print(response.status_code)
-    print(response.response)
+    #print(response.status_code)
+    #print(response.response)

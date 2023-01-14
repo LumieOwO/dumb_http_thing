@@ -42,5 +42,4 @@ class Headers:
         header_str += "\r\n"
         if self.payload is not None and self.METHOD == "POST":
             header_str += json.dumps(self.payload)
-        print(header_str)
         return header_str

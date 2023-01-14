@@ -5,7 +5,7 @@ class Super_method:
         url : str,
         headers : dict,
         METHOD:str,
-        payload=None
+        payload=None,
         ) -> None:
         self.url = url
         self.weburl = url.split("://")[1:2][0].split("/")[0]
@@ -15,7 +15,7 @@ class Super_method:
             METHOD=METHOD,
             URL=self.weburl,
             HEADERS=headers,
-            payload=payload
+            payload=payload,
             ).create_headers()
         self.sock , self.port = Request_obj(url=self.url).Create_socket_OBJ()
         self.Sockheader = Sock_settings(self.sock)
@@ -25,7 +25,6 @@ class Super_method:
         self.status_c = self.Sockheader.status_code()
         self.sock.close()
         
-
     @property
     def status_code(self):
         return self.status_c

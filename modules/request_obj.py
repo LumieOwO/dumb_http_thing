@@ -13,8 +13,9 @@ class Request_obj:
     def Create_socket_OBJ(self):
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         sock.settimeout(30)
+        """ssl.SSLContext().wrap_socket(sock=sock)""" 
         if self.port == 443:
-            return ssl.SSLContext().wrap_socket(sock=sock), self.port
+            return ssl.SSLContext().wrap_socket(sock=sock, server_hostname=self.url.split('/')[2]), self.port
         elif self.port == 80:
             sock = sock
             return sock, self.port

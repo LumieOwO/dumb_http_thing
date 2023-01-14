@@ -12,6 +12,16 @@ class Sock_settings:
         while sent < len(data):
             sent = sent + self.sock.send(data[sent:])
 
+    def allowed_METHODS(
+            self,
+            dat
+            ):
+        data = dat.split("\n")
+        for line in data:
+            if line.startswith("Allow:"):
+                return line.split(" ")[1:]
+
+
     def text(
             self,
             dat):

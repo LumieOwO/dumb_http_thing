@@ -1,8 +1,6 @@
-from methods import Post
+from methods import Put
+import json
 if __name__ == "__main__":
-        post = Post(url='http://data.pr4e.org/romeo.txt', headers={},payload={})
-
-        print(post.text)
-        #print(post.response)
-        #print(post.Allowed_METHODS)
-        #print(post.return_all)
+        data = Put(url='https://demoqa.com/BookStore/v1/Books/', headers={},payload={})
+        print(data.response)
+        #print(json.loads(data.text)["bpi"]["USD"]["rate_float"])
